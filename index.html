@@ -44,7 +44,7 @@
 			<a href="#" class="search-close"><i class="md md-close"></i></a>
 			<div class="row">
 				<div class="col-sm-6 col-sm-offset-3">
-					<h4>Just Start Typing Text and Press Enter</h4>
+					<h4>Ecrivez votre mot et Pressez sur  "Entrer"</h4>
 					<form class="search-form">
 						<input type="text" id="search" name="search" class="text-center" />
 					</form> <!-- end .search-form -->
@@ -61,18 +61,20 @@
 					<a href="#" class="slide-out-share pull-right"><i class="md md-more-vert"></i></a>
 				</div> <!-- end .clearfix -->
 				<!-- Popup -->
-				<div class="slide-out-popup">
-					<nav class="social-nav">
+				<div class="slide-out-popup" >
+					<nav class="social-nav" ng-controller="Compte">
 						<ul class="list-unstyled">
-							<li><a href="#">Facebook</a></li>
-							<li><a href="#">Twitter</a></li>
-							<li><a href="#">Linkedin</a></li>
-							<li><a href="#">Google+</a></li>
-							<li><a href="#">Behance</a></li>
+							<li><a href="{{facebook}}">Facebook</a></li>
+							<li><a href="{{twitter}}">Twitter</a></li>
+							<li><a href="{{linkedin}}">Linkedin</a></li>
+							<li><a href="{{google}}">Google+</a></li>
+							<li><a href="{{github}}">Github</a></li>
+              
 						</ul> <!-- end .list-unstyled -->
 					</nav> <!-- end .social-nav -->
 				</div> <!-- end .slide-out-popup -->
-				<div class="image"><img src="images/head01.png" alt="alt text" class="img-responsive"></div>
+				
+        <div class="image"><img src="images/head01.png" alt="alt text" class="img-responsive"></div>
 				<div class="content">
 					<h5>Benjamin Thomson</h5>
 					<span>Web & UX Designer</span>
@@ -147,39 +149,40 @@
 				</div> <!-- end .right-icons -->
 				<!-- Popup -->
 				<div class="popup">
-					<nav class="social-nav">
+						<nav class="social-nav" ng-controller="Compte">
 						<ul class="list-unstyled">
-							<li><a href="#">Facebook</a></li>
-							<li><a href="#">Twitter</a></li>
-							<li><a href="#">Linkedin</a></li>
-							<li><a href="#">Google+</a></li>
-							<li><a href="#">Behance</a></li>
+							<li><a href="{{facebook}}">Facebook</a></li>
+							<li><a href="{{twitter}}">Twitter</a></li>
+							<li><a href="{{linkedin}}">Linkedin</a></li>
+							<li><a href="{{google}}">Google+</a></li>
+							<li><a href="{{github}}">Github</a></li>
+              
 						</ul> <!-- end .list-unstyled -->
-					</nav> <!-- end .social-nav -->
+					</nav><!-- end .social-nav -->
 				</div> <!-- end .popup -->
 			</div> <!-- end .top -->
-			<div class="bottom clearfix">
-				<div class="title"><a href="index-2.html">Sility</a></div>
+			<div class="bottom clearfix"  ng-controller="navbar">
+				<div class="title"><a href="index-2.html">{{nom}}</a></div>
 				<div class="header-action-button-wrapper">
 					<a href="#" class="header-action-button action-button"><i class="md md-add"></i></a>
 				</div> <!-- end .header-action-button-wrapper -->
 				<a href="#" class="responsive-menu-open">Menu <i class="fa fa-bars"></i></a>
 				<nav class="main-nav">
 					<ul class="list-unstyled">
-						<li class="active"><a href="#section1">Home</a></li>
-						<li><a href="#section2">About</a></li>
-						<li><a href="#section3">Skill</a></li>
-						<li><a href="#section4">Experience</a></li>
-						<li><a href="#section5">Education</a></li>
-						<li><a href="#section6">Work</a></li>
-						<li><a href="#section7">Blog</a></li>
-						<li><a href="#section8">Contact</a></li>
+						<li class="active"><a href="#section1">{{section1}}</a></li>
+						<li><a href="#section2">{{section2}}</a></li>
+						<li><a href="#section3">{{section3}}</a></li>
+						<li><a href="#section4">{{section4}}</a></li>
+						<li><a href="#section5">{{section5}}</a></li>
+						<li><a href="#section6">{{section6}}</a></li>
+						<li><a href="#section7">{{section7}}</a></li>
+						<li><a href="#section8">{{section8}}</a></li>
 					</ul>
 				</nav> <!-- end .main-nav -->
 			</div> <!-- end .bottom -->
 		</header> <!-- end .header -->
 		<div class="responsive-menu">
-			<a href="#" class="responsive-menu-close">Close <i class="ion-android-close"></i></a>
+			<a href="#" class="responsive-menu-close">Fermer <i class="ion-android-close"></i></a>
 			<nav class="responsive-nav"></nav> <!-- end .responsive-nav -->
 		</div> <!-- end .responsive-menu -->
 
@@ -196,16 +199,16 @@
 			<div class="sections-wrapper clearfix">
 
 				<!-- Home -->
-				<section id="section1" class="no-padding-bottom active">
+				<section id="section1" class="no-padding-bottom active" ng-controller="section1">
 					<div class="container">
 						<div class="row">
 							<div class="col-sm-7 vertical-center padding-fix">
-								<h1>Design<sup>+</sup> Develope<sup>+</sup> Interactive<sup>+</sup> Art<sup>+</sup></h1>
-								<p>Hello, I’m Benjamin Thomson. I Have 8 years of experience in Web and UX design. I am worked on a variety of brands and with agencies both big and small.</p>
-								<p class="button-row"><a href="#" class="button solid-button white">Hire Me Now</a><a href="#" class="button solid-button purple">Download CV</a></p>
+								<h1>{{fonction1}}<sup>+</sup> {{fonction2}}<sup>+</sup> {{fonction3}}</h1>
+								<p>{{descriptif}}</p>
+								<p class="button-row"><a href="#" class="button solid-button white">Hire Me Now</a><a href="{{cv}}" class="button solid-button purple">TELECHARGER MON CV</a></p>
 							</div> <!-- end .col-sm-7 -->
 							<div class="col-sm-5 vertical-center">
-								<img src="images/man01.png" alt="man" class="img-responsive section-img">
+								<img src="{{image}}" alt="kevin obam ekono " class="img-responsive section-img">
 							</div> <!-- end .col-sm-5 -->
 						</div> <!-- end .row -->
 					</div> <!-- end .container -->
@@ -1047,7 +1050,7 @@ app.controller('service4', function($scope) {
   });
   
   
-  
+  </script>
   
   
   
