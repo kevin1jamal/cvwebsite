@@ -1,7 +1,6 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
 
-<!-- Mirrored from premiumlayers.net/demo/html/sility/ by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 20 Feb 2019 12:39:06 GMT -->
 
 <head>
 
@@ -12,6 +11,7 @@
 
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
+
     <!-- Material Design Icons -->
     <link href="fonts/material-design-iconic-font/css/material-design-iconic-font.min.css" rel="stylesheet">
     <!-- Font Awesome -->
@@ -28,6 +28,8 @@
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
     <!-- Style.css -->
     <link href="css/style.css" rel="stylesheet">
+    <!-- Vivify pour animation-->
+    <link href="css/vivify.min.css " rel="stylesheet" type="text/css" />
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -59,7 +61,7 @@
     <!-- end .row -->
     <!-- Slide Out -->
     <div class="slide-out-overlay"></div>
-    <div class="slide-out">
+    <div class="slide-out" ng-controller="cafe">
         <header class="slide-out-header clearfix">
             <div class="clearfix">
                 <a href="#" class="slide-out-close pull-left"><i class="md md-close"></i></a>
@@ -84,24 +86,24 @@
             </div>
             <!-- end .slide-out-popup -->
 
-            <div class="image"><img src="images/head01.png" alt="alt text" class="img-responsive"></div>
+            <div class="image vivify ball"><img src="{{image}}" alt="alt text" class="img-responsive"></div>
             <div class="content">
-                <h5>Benjamin Thomson</h5>
-                <span>Web & UX Designer</span>
+                <h5>{{nom}}</h5>
+                <span>{{fonction}}</span>
             </div>
             <!-- end .content -->
             <div class="text-right">
-                <a href="#" class="button link-button white icon-left"><i class="md md-file-download"></i>Download Resume</a>
+                <a href="{{cv}}" class="button link-button white icon-left" target="_blank"><i class="md md-file-download"></i>Telecharger CV</a>
             </div>
             <!-- end .text-right -->
         </header>
         <!-- end .slide-out-header -->
         <div class="slide-out-widgets">
             <div class="slide-out-widget">
-                <h4>Drink A Coffee With Me Today</h4>
-                <form action="http://premiumlayers.net/demo/html/sility/scripts/contact.php" method="post" class="form-horizontal contact-form">
+                <h4>{{slogan}}</h4>
+                <form action="#" method="post" class="form-horizontal contact-form">
                     <div class="form-group">
-                        <label class="col-sm-3 control-label">Name</label>
+                        <label class="col-sm-3 control-label">Nom</label>
                         <div class="col-sm-9">
                             <input type="text" class="contact-name" name="contact-name" />
                         </div>
@@ -126,7 +128,7 @@
                     <!-- end .form-group -->
                     <div class="form-group">
                         <div class="col-sm-9 col-sm-offset-3">
-                            <button type="submit" class="button solid-button purple">Send Message</button>
+                            <button type="submit" class="button solid-button purple">Envoyer</button>
                         </div>
                         <!-- end .col-sm-9 -->
                     </div>
@@ -140,25 +142,14 @@
                         <button type="button" class="close" data-hide="alert" aria-label="Close"><i class="fa fa-times"></i></button>
                     </div>
                     <div class="contact-error alert alert-danger form-alert">
-                        <span class="message">Error!</span>
+                        <span class="message">Erreur!</span>
                         <button type="button" class="close" data-hide="alert" aria-label="Close"><i class="fa fa-times"></i></button>
                     </div>
                 </form>
                 <!-- end contact-form -->
             </div>
             <!-- end .slide-out-widget -->
-            <div class="slide-out-widget">
-                <h4>Follow On Instagram</h4>
-                <div class="instagram">
-                    <a href="#"><img src="images/instagram01.jpg" alt="alt text" class="img-responsive"></a>
-                    <a href="#"><img src="images/instagram02.jpg" alt="alt text" class="img-responsive"></a>
-                    <a href="#"><img src="images/instagram03.jpg" alt="alt text" class="img-responsive"></a>
-                    <a href="#"><img src="images/instagram04.jpg" alt="alt text" class="img-responsive"></a>
-                    <a href="#"><img src="images/instagram05.jpg" alt="alt text" class="img-responsive"></a>
-                    <a href="#"><img src="images/instagram06.jpg" alt="alt text" class="img-responsive"></a>
-                </div>
-                <!-- end .instagram -->
-            </div>
+
             <!-- end .slide-out-widget -->
         </div>
         <!-- end .slide-out-widgets -->
@@ -168,7 +159,7 @@
     <!-- Header -->
     <header class="header">
         <div class="top clearfix">
-            <a href="#section8" class="available"><i class="ion-ios-email-outline"></i><span>Available For Freelance</span></a>
+            <a href="#section8" class="available"><i class="ion-ios-email-outline"></i><span>Disponible pour un contrat interresant</span></a>
             <div class="right-icons">
                 <a href="#" class="open-search header-open-search"><i class="md md-search"></i></a>
                 <a href="#" class="download"><i class="md md-file-download"></i></a>
@@ -185,6 +176,7 @@
                         <li><a href="{{google}}">Google+</a></li>
                         <li><a href="{{github}}">Github</a></li>
 
+
                     </ul>
                     <!-- end .list-unstyled -->
                 </nav>
@@ -194,7 +186,7 @@
         </div>
         <!-- end .top -->
         <div class="bottom clearfix">
-            <div class="title">
+            <div class="title vivify ball">
                 <a href="#">Kevin</a>
             </div>
             <div class="header-action-button-wrapper">
@@ -244,9 +236,9 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-sm-7 vertical-center padding-fix">
-                            <h1>{{fonction1}}<sup>+</sup> </h1>
+                            <h1>{{fonction1}}<sup>+</sup> {{fonction2}}</h1>
                             <p>{{descriptif}}</p>
-                            <p class="button-row"><a href="#" class="button solid-button white">Contactez Moi</a><a href="{{cv}}" class="button solid-button purple">TELECHARGER MON CV</a></p>
+                            <p class="button-row"><a href="https://github.com/kevin1jamal/" class="button solid-button white" target="_blank">Repertoire Github</a><a href="{{cv}}" class="button solid-button purple" target="_blank"> MON CV</a></p>
                         </div>
                         <!-- end .col-sm-7 -->
                         <div class="col-sm-5 vertical-center">
@@ -261,7 +253,7 @@
             <!-- end #section1 -->
 
             <!-- About -->
-            <section id="section2" ng-controller="about">
+            <section id="section2" ng-controller="About">
                 <div class="container">
                     <h2>{{titre_section}}</h2>
                     <div class="row">
@@ -273,7 +265,7 @@
                             <h3 class="small-margin-bottom">{{nom}}</h3>
                             <h5>{{fonction}}</h5>
                             <p>{{descriptif}} </p>
-                            <div class="signature"><img src="images/signature.png" alt="signature" class="img-responsive"></div>
+
                             <ul class="list-unstyled text-uppercase">
                                 <li><b>Date De Naissance:</b> {{date_naissance}}</li>
                                 <li><b>Tel:</b> {{phone}}</li>
@@ -324,9 +316,12 @@
             <section id="section3">
                 <div class="container">
                     <h2>MES COMPENTENCES</h2>
+
+
+
                     <div class="row">
                         <div class="col-sm-6" ng-controller="mes_compentences">
-                            <h4>Compentences Techniques</h4>
+                            <h4>Compentences Front-end</h4>
                             <label class="progress-bar-label">{{nom1}}</label>
                             <div class="progress">
                                 <div class="progress-bar" role="progressbar" aria-valuenow="{{indice1}}" aria-valuemin="0" aria-valuemax="100">
@@ -351,7 +346,7 @@
                                 <!-- end .progress-bar -->
                             </div>
                             <!-- end .progress -->
-                            <label class="progress-bar-label">{{indice4}}</label>
+                            <label class="progress-bar-label">{{nom4}}</label>
                             <div class="progress">
                                 <div class="progress-bar" role="progressbar" aria-valuenow="{{indice4}}" aria-valuemin="0" aria-valuemax="100">
                                     <span>{{indice4}}%</span>
@@ -362,7 +357,7 @@
                         </div>
                         <!-- end .col-sm-6 -->
                         <div class="col-sm-6">
-                            <h4>Knowledge</h4>
+                            <h4>Connaisances </h4>
                             <div class="row">
                                 <div class="col-sm-6" ng-controller="connaissances1">
                                     <ul class="list-icons purple bold-list">
@@ -393,17 +388,162 @@
                         </div>
                         <!-- end .col-sm-6 -->
                     </div>
+
+
+                    <div class="row">
+                        <div class="col-sm-6" ng-controller="mes_compentences2">
+                            <h4>Compentences Back-end</h4>
+                            <label class="progress-bar-label">{{nom1}}</label>
+                            <div class="progress">
+                                <div class="progress-bar" role="progressbar" aria-valuenow="{{indice1}}" aria-valuemin="0" aria-valuemax="100">
+                                    <span>{{indice1}}%</span>
+                                </div>
+                                <!-- end .progress-bar -->
+                            </div>
+                            <!-- end .progress -->
+                            <label class="progress-bar-label">{{nom2}}</label>
+                            <div class="progress">
+                                <div class="progress-bar" role="progressbar" aria-valuenow="{{indice2}}" aria-valuemin="0" aria-valuemax="100">
+                                    <span>{{indice2}}%</span>
+                                </div>
+                                <!-- end .progress-bar -->
+                            </div>
+                            <!-- end .progress -->
+                            <label class="progress-bar-label">{{nom3}}</label>
+                            <div class="progress">
+                                <div class="progress-bar" role="progressbar" aria-valuenow="{{indice3}}" aria-valuemin="0" aria-valuemax="100">
+                                    <span>{{indice3}}%</span>
+                                </div>
+                                <!-- end .progress-bar -->
+                            </div>
+                            <!-- end .progress -->
+                            <label class="progress-bar-label">{{nom4}}</label>
+                            <div class="progress">
+                                <div class="progress-bar" role="progressbar" aria-valuenow="{{indice4}}" aria-valuemin="0" aria-valuemax="100">
+                                    <span>{{indice4}}%</span>
+                                </div>
+                                <!-- end .progress-bar -->
+                            </div>
+                            <!-- end .progress -->
+                        </div>
+                        <!-- end .col-sm-6 -->
+                        <div class="col-sm-6">
+                            <h4>Connaisances </h4>
+                            <div class="row">
+                                <div class="col-sm-6" ng-controller="connaissances3">
+                                    <ul class="list-icons purple bold-list">
+                                        <li><i class="md-arrow-forward"></i>{{connaissances1}}</li>
+                                        <li><i class="md-arrow-forward"></i>{{connaissances2}}</li>
+                                        <li><i class="md-arrow-forward"></i>{{connaissances3}}</li>
+                                        <li><i class="md-arrow-forward"></i>{{connaissances4}}</li>
+                                        <li><i class="md-arrow-forward"></i>{{connaissances5}}</li>
+                                        <li><i class="md-arrow-forward"></i>{{connaissances6}}</li>
+                                        <li><i class="md-arrow-forward"></i>{{connaissances7}}</li>
+                                    </ul>
+                                </div>
+                                <!-- end .col-sm-6 -->
+                                <div class="col-sm-6" ng-controller="connaissances4">
+                                    <ul class="list-icons purple bold-list">
+                                        <li><i class="md-arrow-forward"></i>{{connaissances1}}</li>
+                                        <li><i class="md-arrow-forward"></i>{{connaissances2}}</li>
+                                        <li><i class="md-arrow-forward"></i>{{connaissances3}}</li>
+                                        <li><i class="md-arrow-forward"></i>{{connaissances4}}</li>
+                                        <li><i class="md-arrow-forward"></i>{{connaissances5}}</li>
+                                        <li><i class="md-arrow-forward"></i>{{connaissances6}}</li>
+                                        <li><i class="md-arrow-forward"></i>{{connaissances7}}</li>
+                                    </ul>
+                                </div>
+                                <!-- end .col-sm-6 -->
+                            </div>
+                            <!-- end .row -->
+                        </div>
+                        <!-- end .col-sm-6 -->
+                    </div>
+
+
+                    <div class="row">
+                        <div class="col-sm-6" ng-controller="mes_compentences3">
+                            <h4>Compentences Divers</h4>
+                            <label class="progress-bar-label">{{nom1}}</label>
+                            <div class="progress">
+                                <div class="progress-bar" role="progressbar" aria-valuenow="{{indice1}}" aria-valuemin="0" aria-valuemax="100">
+                                    <span>{{indice1}}%</span>
+                                </div>
+                                <!-- end .progress-bar -->
+                            </div>
+                            <!-- end .progress -->
+                            <label class="progress-bar-label">{{nom2}}</label>
+                            <div class="progress">
+                                <div class="progress-bar" role="progressbar" aria-valuenow="{{indice2}}" aria-valuemin="0" aria-valuemax="100">
+                                    <span>{{indice2}}%</span>
+                                </div>
+                                <!-- end .progress-bar -->
+                            </div>
+                            <!-- end .progress -->
+                            <label class="progress-bar-label">{{nom3}}</label>
+                            <div class="progress">
+                                <div class="progress-bar" role="progressbar" aria-valuenow="{{indice3}}" aria-valuemin="0" aria-valuemax="100">
+                                    <span>{{indice3}}%</span>
+                                </div>
+                                <!-- end .progress-bar -->
+                            </div>
+                            <!-- end .progress -->
+                            <label class="progress-bar-label">{{nom4}}</label>
+                            <div class="progress">
+                                <div class="progress-bar" role="progressbar" aria-valuenow="{{indice4}}" aria-valuemin="0" aria-valuemax="100">
+                                    <span>{{indice4}}%</span>
+                                </div>
+                                <!-- end .progress-bar -->
+                            </div>
+                            <!-- end .progress -->
+                        </div>
+                        <!-- end .col-sm-6 -->
+                        <div class="col-sm-6">
+                            <h4>Connaisances </h4>
+                            <div class="row">
+                                <div class="col-sm-6" ng-controller="connaissances5">
+                                    <ul class="list-icons purple bold-list">
+                                        <li><i class="md-arrow-forward"></i>{{connaissances1}}</li>
+                                        <li><i class="md-arrow-forward"></i>{{connaissances2}}</li>
+                                        <li><i class="md-arrow-forward"></i>{{connaissances3}}</li>
+                                        <li><i class="md-arrow-forward"></i>{{connaissances4}}</li>
+                                        <li><i class="md-arrow-forward"></i>{{connaissances5}}</li>
+                                        <li><i class="md-arrow-forward"></i>{{connaissances6}}</li>
+                                        <li><i class="md-arrow-forward"></i>{{connaissances7}}</li>
+                                    </ul>
+                                </div>
+                                <!-- end .col-sm-6 -->
+                                <div class="col-sm-6" ng-controller="connaissances6">
+                                    <ul class="list-icons purple bold-list">
+                                        <li><i class="md-arrow-forward"></i>{{connaissances1}}</li>
+                                        <li><i class="md-arrow-forward"></i>{{connaissances2}}</li>
+                                        <li><i class="md-arrow-forward"></i>{{connaissances3}}</li>
+                                        <li><i class="md-arrow-forward"></i>{{connaissances4}}</li>
+                                        <li><i class="md-arrow-forward"></i>{{connaissances5}}</li>
+                                        <li><i class="md-arrow-forward"></i>{{connaissances6}}</li>
+                                        <li><i class="md-arrow-forward"></i>{{connaissances7}}</li>
+                                    </ul>
+                                </div>
+                                <!-- end .col-sm-6 -->
+                            </div>
+                            <!-- end .row -->
+                        </div>
+                        <!-- end .col-sm-6 -->
+                    </div>
+
+
+
                     <!-- end .row -->
                     <div class="spacer"></div>
                     <h4>Compentences Linguistiques</h4>
-                    <div class="row">
+                    <div class="row" ng-controller="language">
                         <div class="col-sm-4">
                             <div class="circle-progress-wrapper clearfix">
                                 <div class="circle-progress">
-                                    <input type="text" class="dial" value="99" data-color="#7c4dff" data-from="0" data-to="99" />
+                                    <input type="text" class="dial" value="{{indice1}}" data-color="#7c4dff" data-from="0" data-to="{{indice1}}" />
                                 </div>
                                 <!-- end .circle-progress -->
-                                <div class="circle-progress-label-wrapper"><label class="circle-progress-label">English Experienced</label></div>
+                                <div class="circle-progress-label-wrapper"><label class="circle-progress-label">{{nom1}} {{niveau1}}</label></div>
                             </div>
                             <!-- end .circle-progress-wrapper -->
                         </div>
@@ -411,10 +551,10 @@
                         <div class="col-sm-4">
                             <div class="circle-progress-wrapper clearfix">
                                 <div class="circle-progress">
-                                    <input type="text" class="dial" value="80" data-color="#7c4dff" data-from="0" data-to="80" />
+                                    <input type="text" class="dial" value="{{indice2}}" data-color="#7c4dff" data-from="0" data-to="{{indice2}}" />
                                 </div>
                                 <!-- end .circle-progress -->
-                                <div class="circle-progress-label-wrapper"><label class="circle-progress-label">French Advanced</label></div>
+                                <div class="circle-progress-label-wrapper"><label class="circle-progress-label">{{nom2}} {{niveau2}}</label></div>
                             </div>
                             <!-- end .circle-progress-wrapper -->
                         </div>
@@ -422,10 +562,10 @@
                         <div class="col-sm-4">
                             <div class="circle-progress-wrapper clearfix">
                                 <div class="circle-progress">
-                                    <input type="text" class="dial" value="69" data-color="#7c4dff" data-from="0" data-to="69" />
+                                    <input type="text" class="dial" value="{{indice3}}" data-color="#7c4dff" data-from="0" data-to="{{indice3}}" />
                                 </div>
                                 <!-- end .circle-progress -->
-                                <div class="circle-progress-label-wrapper"><label class="circle-progress-label">German Basic</label></div>
+                                <div class="circle-progress-label-wrapper"><label class="circle-progress-label">{{nom3}} {{niveau3}}</label></div>
                             </div>
                             <!-- end .circle-progress-wrapper -->
                         </div>
@@ -438,23 +578,23 @@
             <!-- end #section1 -->
 
             <!-- Experience -->
-            <section id="section4">
+            <section id="section4" ng-controller="experience">
                 <div class="container">
-                    <h2>8 Years Experience</h2>
-                    <div class="experience-timeline">
+                    <h2>{{nombre}} ans d' Experiences</h2>
+                    <div class="experience-timeline" ng-controller="emploi">
                         <div class="experience-block clearfix">
                             <div class="meta">
-                                <span class="year">2012 - Current</span>
-                                <span class="company">Themeforest</span>
+                                <span class="year">{{duree1}}</span>
+                                <span class="company">{{entreprise1}}</span>
                             </div>
                             <!-- end .meta -->
                             <div class="content">
-                                <h5>Senior Web & UX Designer</h5>
-                                <p>Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velitus sed quia non num quam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.</p>
+                                <h5>{{fonction1}}</h5>
+                                <p>{{descriptif1}}</p>
                             </div>
                             <!-- end .content -->
                             <div class="icon">
-                                <i class="ion-easel"></i>
+                                <i class="{{icon1}}"></i>
                             </div>
                             <!-- end .icon -->
                             <div class="line"></div>
@@ -462,17 +602,17 @@
                         <!-- end .experience-block -->
                         <div class="experience-block clearfix">
                             <div class="meta">
-                                <span class="year">2008 - 2012</span>
-                                <span class="company">Graphicriver</span>
+                                <span class="year">{{duree2}}</span>
+                                <span class="company">{{entreprise2}}</span>
                             </div>
                             <!-- end .meta -->
                             <div class="content">
-                                <h5>Graphic Designer</h5>
-                                <p>Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velitus sed quia non num quam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.</p>
+                                <h5>{{fonction2}}</h5>
+                                <p>{{descriptif2}}</p>
                             </div>
                             <!-- end .content -->
                             <div class="icon">
-                                <i class="ion-images"></i>
+                                <i class="{{icon2}}"></i>
                             </div>
                             <!-- end .icon -->
                             <div class="line"></div>
@@ -480,17 +620,17 @@
                         <!-- end .experience-block -->
                         <div class="experience-block clearfix">
                             <div class="meta">
-                                <span class="year">2006 - 2008</span>
-                                <span class="company">Codecanyon</span>
+                                <span class="year">{{duree3}}</span>
+                                <span class="company">{{entreprise3}}</span>
                             </div>
                             <!-- end .meta -->
                             <div class="content">
-                                <h5>Web Developer</h5>
-                                <p>Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velitus sed quia non num quam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.</p>
+                                <h5>{{fonction3}}</h5>
+                                <p>{{descriptif3}}</p>
                             </div>
                             <!-- end .content -->
                             <div class="icon">
-                                <i class="ion-card"></i>
+                                <i class="{{icon3}}"></i>
                             </div>
                             <!-- end .icon -->
                         </div>
@@ -501,24 +641,24 @@
                     <!-- Testimonials -->
                     <div class="row">
                         <div class="col-sm-8 col-sm-offset-2">
-                            <div class="testimonial-slider owl-carousel">
+                            <div class="testimonial-slider owl-carousel" ng-controller="temoignage">
                                 <div>
-                                    <div class="image"><img src="images/testimonial.jpg" alt="alt text"></div>
+                                    <div class="image"><img src="{{image1}}" alt="alt text"></div>
                                     <div class="sep"></div>
-                                    <p>" Awesome to work with. Incredibly organized, easy to communicate with, responsive with next iterations, and beautiful work. "</p>
-                                    <span class="author">swetain , CEO of Texco Company</span>
+                                    <p>" {{titre1}} "</p>
+                                    <span class="author">{{fonction1}}</span>
                                 </div>
                                 <div>
-                                    <div class="image"><img src="images/testimonial.jpg" alt="alt text"></div>
+                                    <div class="image"><img src="{{image2}}" alt="alt text"></div>
                                     <div class="sep"></div>
-                                    <p>" Awesome to work with. Incredibly organized, easy to communicate with, responsive with next iterations, and beautiful work. "</p>
-                                    <span class="author">swetain , CEO of Texco Company</span>
+                                    <p>" {{titre2}} "</p>
+                                    <span class="author">{{fonction2}}</span>
                                 </div>
                                 <div>
-                                    <div class="image"><img src="images/testimonial.jpg" alt="alt text"></div>
+                                    <div class="image"><img src="{{image3}}" alt="alt text"></div>
                                     <div class="sep"></div>
-                                    <p>" Awesome to work with. Incredibly organized, easy to communicate with, responsive with next iterations, and beautiful work. "</p>
-                                    <span class="author">swetain , CEO of Texco Company</span>
+                                    <p>" {{titre3}} "</p>
+                                    <span class="author">{{fonction3}}</span>
                                 </div>
                             </div>
                             <!-- end .testimonial-slider -->
@@ -533,88 +673,88 @@
             <!-- end #section1 -->
 
             <!-- Education -->
-            <section id="section5">
+            <section id="section5" ng-controller="education">
                 <div class="container">
-                    <h2>Educational Value</h2>
-                    <div class="education clearfix">
+                    <h2>{{titre1}}</h2>
+                    <div class="education clearfix" ng-controller="diplome">
                         <div class="item">
                             <div class="marker"></div>
                             <div class="content">
-                                <span>University Of Design</span>
-                                <h4>Master Degree of Design</h4>
+                                <span>{{etablissement1}}</span>
+                                <h4>{{diplome1}}</h4>
                             </div>
-                            <div class="year">2005 - 2006</div>
+                            <div class="year">{{annee1}}</div>
                         </div>
                         <!-- end item -->
                         <div class="item">
                             <div class="marker"></div>
                             <div class="content">
-                                <span>University Of Design</span>
-                                <h4>Master Degree of Design</h4>
+                                <span>{{etablissement2}}</span>
+                                <h4>{{diplome2}}</h4>
                             </div>
-                            <div class="year">2005 - 2006</div>
+                            <div class="year">{{annee2}}</div>
                         </div>
                         <!-- end item -->
                         <div class="item">
                             <div class="marker"></div>
                             <div class="content">
-                                <span>University Of Design</span>
-                                <h4>Master Degree of Design</h4>
+                                <span>{{etablissement3}}</span>
+                                <h4>{{diplome3}}</h4>
                             </div>
-                            <div class="year">2005 - 2006</div>
+                            <div class="year">{{annee3}}</div>
                         </div>
                         <!-- end item -->
                         <div class="item">
                             <div class="marker"></div>
                             <div class="content">
-                                <span>University Of Design</span>
-                                <h4>Master Degree of Design</h4>
+                                <span>{{etablissement4}}</span>
+                                <h4>{{diplome4}}</h4>
                             </div>
-                            <div class="year">2005 - 2006</div>
+                            <div class="year">{{annee4}}</div>
                         </div>
                         <!-- end item -->
                         <div class="line"></div>
                     </div>
                     <!-- end .education -->
 
-                    <h2>Hobbies & Interest</h2>
-                    <div class="row">
+                    <h2>{{titre2}}</h2>
+                    <div class="row" ng-controller="hobbies">
                         <div class="col-sm-2 col-sm-offset-1 col-xs-6">
                             <div class="icon-box">
-                                <div class="icon"><i class="ion-easel"></i></div>
-                                <h6>Web Research</h6>
+                                <div class="icon"><i class="{{image1}}"></i></div>
+                                <h6>{{nom1}}</h6>
                             </div>
                             <!-- end .icon-box -->
                         </div>
                         <!-- end .col-sm-2 -->
                         <div class="col-sm-2 col-xs-6">
                             <div class="icon-box">
-                                <div class="icon"><i class="ion-ios-camera-outline"></i></div>
-                                <h6>Photography</h6>
+                                <div class="icon"><i class="{{image2}}"></i></div>
+                                <h6>{{nom2}}</h6>
                             </div>
                             <!-- end .icon-box -->
                         </div>
                         <!-- end .col-sm-2 -->
                         <div class="col-sm-2 col-xs-6">
                             <div class="icon-box">
-                                <div class="icon"><i class="ion-plane"></i></div>
-                                <h6>Travelling</h6>
+                                <div class="icon"><i class="{{image3}}"></i></div>
+                                <h6>{{nom3}}</h6>
                             </div>
                             <!-- end .icon-box -->
                         </div>
                         <!-- end .col-sm-2 -->
                         <div class="col-sm-2 col-xs-6">
                             <div class="icon-box">
-                                <div class="icon"><i class="ion-ios-bookmarks-outline"></i></div>
-                                <h6>Book Reading</h6>
+                                <div class="icon"><i class="{{image4}}"></i></div>
+                                <h6>{{nom4}}</h6>
                             </div>
                             <!-- end .icon-box -->
                         </div>
                         <!-- end .col-sm-2 -->
                         <div class="col-sm-2 col-xs-6">
                             <div class="icon-box">
-                                <div class="icon"><i class="ion-ios-musical-notes"></i></div>
-                                <h6>Music</h6>
+                                <div class="icon"><i class="{{image5}}"></i></div>
+                                <h6>{{nom5}}</h6>
                             </div>
                             <!-- end .icon-box -->
                         </div>
@@ -627,153 +767,81 @@
             <!-- end #section1 -->
 
             <!-- Portfolio -->
-            <section id="section6">
+            <section id="section6" ng-controller="realisation">
                 <div class="container">
-                    <h2>Portfolio</h2>
+                    <h2>{{nom}}</h2>
                     <div class="portfolio-wrapper">
                         <div id="portfolio-filters" class="portfolio-filters">
-                            <button class="button solid-button white-purple small" data-filter="*">Show All</button>
-                            <button class="button solid-button white-purple small" data-filter=".branding">Branding</button>
-                            <button class="button solid-button white-purple small" data-filter=".print">Print</button>
-                            <button class="button solid-button white-purple small" data-filter=".motion">Motion</button>
-                            <button class="button solid-button white-purple small" data-filter=".websites">Websites</button>
+                            <button class="button solid-button white-purple small" data-filter="*">Tout</button>
+                            <button class="button solid-button white-purple small" data-filter=".{{tag1}}">{{tag1}}</button>
+                            <button class="button solid-button white-purple small" data-filter=".{{tag2}}">{{tag2}}</button>
+                            <button class="button solid-button white-purple small" data-filter=".{{tag3}}">{{tag3}}</button>
+                            <button class="button solid-button white-purple small" data-filter=".{{tag4}}">{{tag4}}</button>
                         </div>
-                        <div id="portfolio" class="portfolio">
-                            <div class="item branding print">
-                                <img src="images/portfolio01.jpg" alt="alt text" class="img-responsive">
-                                <a href="single-portfolio.html" class="overlay">
+                        <div id="portfolio" class="portfolio" ng-controller="projet">
+                            <div class="item {{tag1}}">
+                                <img src="{{image1}}" alt="alt text" class="img-responsive">
+                                <a href="{{lien1}}" class="overlay">
                                     <div class="background"></div>
                                     <div class="meta">
-                                        <span class="title">Portfolio Item - 01</span>
-                                        <span class="category">Branding, Print</span>
+                                        <span class="title">{{titre1}}</span>
+                                        <span class="category">{{tag1}}</span>
                                     </div>
                                     <!-- end .meta -->
                                 </a>
                                 <!-- end .overlay -->
                             </div>
                             <!-- end .item -->
-                            <div class="item motion">
-                                <img src="images/portfolio02.jpg" alt="alt text" class="img-responsive">
-                                <a href="single-portfolio.html" class="overlay">
+                            <div class="item {{tag2}}">
+                                <img src="{{image2}}" alt="alt text" class="img-responsive">
+                                <a href="{{lien2}}" class="overlay">
                                     <div class="background"></div>
                                     <div class="meta">
-                                        <span class="title">Portfolio Item - 02</span>
-                                        <span class="category">Motion</span>
+                                        <span class="title">{{titre2}}</span>
+                                        <span class="category">{{tag2}}</span>
                                     </div>
                                     <!-- end .meta -->
                                 </a>
                                 <!-- end .overlay -->
                             </div>
                             <!-- end .item -->
-                            <div class="item print">
-                                <img src="images/portfolio03.jpg" alt="alt text" class="img-responsive">
-                                <a href="single-portfolio.html" class="overlay">
+                            <div class="item {{tag3}}">
+                                <img src="{{image3}}" alt="alt text" class="img-responsive">
+                                <a href="{{lien3}}" class="overlay">
                                     <div class="background"></div>
                                     <div class="meta">
-                                        <span class="title">Portfolio Item - 03</span>
-                                        <span class="category">Print</span>
+                                        <span class="title">{{titre3}}</span>
+                                        <span class="category">{{tag3}}</span>
                                     </div>
                                     <!-- end .meta -->
                                 </a>
                                 <!-- end .overlay -->
                             </div>
+
                             <!-- end .item -->
-                            <div class="item print branding websites">
-                                <img src="images/portfolio04.jpg" alt="alt text" class="img-responsive">
-                                <a href="single-portfolio.html" class="overlay">
-                                    <div class="background"></div>
-                                    <div class="meta">
-                                        <span class="title">Portfolio Item - 04</span>
-                                        <span class="category">Branding, Websites</span>
-                                    </div>
-                                    <!-- end .meta -->
-                                </a>
-                                <!-- end .overlay -->
-                            </div>
+
                             <!-- end .item -->
-                            <div class="item print branding">
-                                <img src="images/portfolio05.jpg" alt="alt text" class="img-responsive">
-                                <a href="single-portfolio.html" class="overlay">
-                                    <div class="background"></div>
-                                    <div class="meta">
-                                        <span class="title">Portfolio Item - 05</span>
-                                        <span class="category">Print, Branding</span>
-                                    </div>
-                                    <!-- end .meta -->
-                                </a>
-                                <!-- end .overlay -->
-                            </div>
+
                             <!-- end .item -->
-                            <div class="item motion">
-                                <img src="images/portfolio06.jpg" alt="alt text" class="img-responsive">
-                                <a href="single-portfolio.html" class="overlay">
-                                    <div class="background"></div>
-                                    <div class="meta">
-                                        <span class="title">Portfolio Item - 06</span>
-                                        <span class="category">Motion</span>
-                                    </div>
-                                    <!-- end .meta -->
-                                </a>
-                                <!-- end .overlay -->
-                            </div>
+
                             <!-- end .item -->
-                            <div class="item motion">
-                                <img src="images/portfolio07.jpg" alt="alt text" class="img-responsive">
-                                <a href="single-portfolio.html" class="overlay">
-                                    <div class="background"></div>
-                                    <div class="meta">
-                                        <span class="title">Portfolio Item - 07</span>
-                                        <span class="category">Motion</span>
-                                    </div>
-                                    <!-- end .meta -->
-                                </a>
-                                <!-- end .overlay -->
-                            </div>
+
                             <!-- end .item -->
-                            <div class="item print">
-                                <img src="images/portfolio08.jpg" alt="alt text" class="img-responsive">
-                                <a href="single-portfolio.html" class="overlay">
-                                    <div class="background"></div>
-                                    <div class="meta">
-                                        <span class="title">Portfolio Item - 08</span>
-                                        <span class="category">Print</span>
-                                    </div>
-                                    <!-- end .meta -->
-                                </a>
-                                <!-- end .overlay -->
-                            </div>
+
                             <!-- end .item -->
-                            <div class="item motion">
-                                <img src="images/portfolio09.jpg" alt="alt text" class="img-responsive">
-                                <a href="single-portfolio.html" class="overlay">
-                                    <div class="background"></div>
-                                    <div class="meta">
-                                        <span class="title">Portfolio Item - 09</span>
-                                        <span class="category">Motion</span>
-                                    </div>
-                                    <!-- end .meta -->
-                                </a>
-                                <!-- end .overlay -->
-                            </div>
+
                             <!-- end .item -->
-                            <div class="item websites">
-                                <img src="images/portfolio10.jpg" alt="alt text" class="img-responsive">
-                                <a href="single-portfolio.html" class="overlay">
-                                    <div class="background"></div>
-                                    <div class="meta">
-                                        <span class="title">Portfolio Item - 10</span>
-                                        <span class="category">Websites</span>
-                                    </div>
-                                    <!-- end .meta -->
-                                </a>
-                                <!-- end .overlay -->
-                            </div>
+
                             <!-- end .item -->
                         </div>
                         <!-- end .portfolio -->
+                        <!--    
+                        
                         <div class="portfolio-load-more">
                             <a href="single-portfolio.html" class="button solid-button white icon-right">Load More Work<i class="md-refresh"></i></a>
-                        </div>
+                        </div> 
+                    
+                    -->
                         <!-- end .portfolio-load-more -->
                     </div>
                     <!-- end .portfolio-wrapper -->
@@ -788,6 +856,8 @@
                     <h2>Blog Post</h2>
                     <div class="blog-posts masonry" id="blog-masonry">
                         <div class="blog-grid-sizer"></div>
+
+                        <!-- 
                         <div class="blog-post image-left">
                             <div class="inner">
                                 <a href="single-blog-post.html">
@@ -801,37 +871,57 @@
                                         <span class="share-link"><a href="single-blog-post.html"><i class="fa fa-share-alt"></i></a></span>
                                     </footer>
                                 </div>
-                                <!-- end .content -->
+                               
                             </div>
-                            <!-- end .inner -->
+                           
                         </div>
+                    -->
                         <!-- end .blog-post -->
-                        <div class="blog-post">
-                            <div class="inner">
-                                <div class="content">
-                                    <span class="date">March 15, 2015</span>
-                                    <h4><a href="single-blog-post.html">We Give 99% Satisfy In All Work</a></h4>
-                                    <footer>
-                                        <span class="comments-link"><a href="single-blog-post.html">7 Comments</a></span>
-                                        <span class="share-link"><a href="single-blog-post.html"><i class="fa fa-share-alt"></i></a></span>
-                                    </footer>
-                                </div>
-                                <!-- end .content -->
-                            </div>
-                            <!-- end .inner -->
-                        </div>
+
                         <!-- end .blog-post -->
                         <div class="blog-post image-top">
-                            <div class="inner">
-                                <a href="single-blog-post.html">
-                                    <div class="image" style="background-image: url('images/blog-post-image02.jpg');"></div>
+                            <div class="inner" ng-controller="post">
+                                <a href="{{lien}}">
+                                    <div class="image" style="background-image: url('{{image}}');"></div>
                                 </a>
                                 <div class="content">
-                                    <span class="date">March 13, 2015</span>
-                                    <h4><a href="single-blog-post.html">We Won CSS Design Of The Year</a></h4>
+                                    <span class="date">{{date}}</span>
+                                    <h4><a href="{{lien}}">{{titre}}</a></h4>
+                                    <!-- Button trigger modal -->
+                                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+    Launch demo modal
+  </button>
+
+                                    <!-- Modal -->
+                                    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog" role="document">
+                                            <div class="modal-content">
+                                                <div class="modal-header align-center">
+                                                    <h5 class="modal-title" id="exampleModalLabel">Blog :{{titre}}</h5>
+                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <div class="card bg-dark text-white">
+                                                        <img class="card-img" src="{{image}}" alt="Card image" width="100%">
+                                                        <div class="card-img-overlay">
+                                                            <h5 class="card-title">{{titre}}</h5>
+                                                            <p class="card-text">{{texte}}</p>
+                                                            <p class="card-text">{{date}}</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-danger col-sm-12" data-dismiss="modal">Fermer</button>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
                                     <footer>
-                                        <span class="comments-link"><a href="single-blog-post.html">4 Comments</a></span>
-                                        <span class="share-link"><a href="single-blog-post.html"><i class="fa fa-share-alt"></i></a></span>
+                                        <span class="comments-link"><a href="{{lien}}">{{lus}}</a></span>
+                                        <span class="share-link"><a href="{{lien}}"><i class="fa fa-share-alt"></i></a></span>
                                     </footer>
                                 </div>
                                 <!-- end .content -->
@@ -839,74 +929,13 @@
                             <!-- end .inner -->
                         </div>
                         <!-- end .blog-post -->
-                        <div class="blog-post image-top">
-                            <div class="inner">
-                                <a href="single-blog-post.html">
-                                    <div class="image" style="background-image: url('images/blog-post-image03.jpg');"></div>
-                                </a>
-                                <div class="content">
-                                    <span class="date">March 12, 2015</span>
-                                    <h4><a href="single-blog-post.html">How to Launch Website Easily</a></h4>
-                                    <footer>
-                                        <span class="comments-link"><a href="single-blog-post.html">10 Comments</a></span>
-                                        <span class="share-link"><a href="single-blog-post.html"><i class="fa fa-share-alt"></i></a></span>
-                                    </footer>
-                                </div>
-                                <!-- end .content -->
-                            </div>
-                            <!-- end .inner -->
-                        </div>
+
                         <!-- end .blog-post -->
-                        <div class="blog-post image-right">
-                            <div class="inner">
-                                <a href="single-blog-post.html">
-                                    <div class="image" style="background-image: url('images/blog-post-image04.jpg');"></div>
-                                </a>
-                                <div class="content">
-                                    <span class="date">March 11, 2015</span>
-                                    <h4><a href="single-blog-post.html">Music Is Help To Relax Body And Mind</a></h4>
-                                    <footer>
-                                        <span class="comments-link"><a href="single-blog-post.html">5 Comments</a></span>
-                                        <span class="share-link"><a href="single-blog-post.html"><i class="fa fa-share-alt"></i></a></span>
-                                    </footer>
-                                </div>
-                                <!-- end .content -->
-                            </div>
-                            <!-- end .inner -->
-                        </div>
+
                         <!-- end .blog-post -->
-                        <div class="blog-post">
-                            <div class="inner">
-                                <div class="content">
-                                    <span class="date">March 10, 2015</span>
-                                    <h4><a href="single-blog-post.html">We Support any Type of Design</a></h4>
-                                    <footer>
-                                        <span class="comments-link"><a href="single-blog-post.html">3 Comments</a></span>
-                                        <span class="share-link"><a href="single-blog-post.html"><i class="fa fa-share-alt"></i></a></span>
-                                    </footer>
-                                </div>
-                                <!-- end .content -->
-                            </div>
-                            <!-- end .inner -->
-                        </div>
+
                         <!-- end .blog-post -->
-                        <div class="blog-post image-left">
-                            <div class="inner">
-                                <a href="single-blog-post.html">
-                                    <div class="image" style="background-image: url('images/blog-post-image05.jpg');"></div>
-                                </a>
-                                <div class="content">
-                                    <span class="date">March 9, 2015</span>
-                                    <h4><a href="single-blog-post.html">Change Your Domain Without Risk</a></h4>
-                                    <footer>
-                                        <span class="comments-link"><a href="single-blog-post.html">6 Comments</a></span>
-                                        <span class="share-link"><a href="single-blog-post.html"><i class="fa fa-share-alt"></i></a></span>
-                                    </footer>
-                                </div>
-                                <!-- end .content -->
-                            </div>
-                            <!-- end .inner -->
-                        </div>
+
                         <!-- end .blog-post -->
                     </div>
                     <!-- end .blog-posts -->
@@ -920,6 +949,8 @@
             <!-- end #section1 -->
 
             <!-- Contact -->
+
+            <!--
             <section id="section8">
                 <div class="container">
                     <h2>Get In Touch With Me</h2>
@@ -940,7 +971,7 @@
                                 <a href="#" class="social-icon"><i class="fa fa-behance"></i></a>
                                 <a href="#" class="social-icon"><i class="fa fa-dribbble"></i></a>
                             </div>
-                            <!-- end .social-icons -->
+                         
                             <div class="spacer"></div>
                         </div>
                         <div class="col-sm-7">
@@ -951,32 +982,32 @@
                                     <div class="col-sm-10">
                                         <input type="text" class="contact-name" name="contact-name" />
                                     </div>
-                                    <!-- end .col-sm-10 -->
+                                  
                                 </div>
-                                <!-- end .form-group -->
+                               
                                 <div class="form-group">
                                     <label class="col-sm-2 control-label">Email</label>
                                     <div class="col-sm-10">
                                         <input type="email" class="contact-email" name="contact-email" />
                                     </div>
-                                    <!-- end .col-sm-10 -->
+                                   
                                 </div>
-                                <!-- end .form-group -->
+                               
                                 <div class="form-group">
                                     <label class="col-sm-2 control-label">Message</label>
                                     <div class="col-sm-10">
                                         <textarea name="contact-message" class="contact-message" rows="3"></textarea>
                                     </div>
-                                    <!-- end .col-sm-10 -->
+                                    
                                 </div>
-                                <!-- end .form-group -->
+                              
                                 <div class="form-group">
                                     <div class="col-sm-10 col-sm-offset-2">
                                         <button type="submit" class="button solid-button purple">Send Message</button>
                                     </div>
-                                    <!-- end .col-sm-10 -->
+                                  
                                 </div>
-                                <!-- end .form-group -->
+                             
                                 <div class="contact-loading alert alert-info form-alert">
                                     <span class="message">Loading...</span>
                                     <button type="button" class="close" data-hide="alert" aria-label="Close"><i class="fa fa-times"></i></button>
@@ -990,13 +1021,14 @@
                                     <button type="button" class="close" data-hide="alert" aria-label="Close"><i class="fa fa-times"></i></button>
                                 </div>
                             </form>
-                            <!-- end contact-form -->
+                           
                         </div>
                     </div>
-                    <div class="map" id="map"></div>
+                      <div class="map" id="map"></div>  
                 </div>
-                <!-- end .container -->
+               
             </section>
+             -->
             <!-- end #section1 -->
 
         </div>
@@ -1007,11 +1039,11 @@
     <!-- Footer -->
     <footer class="footer">
         <div class="top">
-            <div class="container">
+            <div class="container" ng-controller="About">
                 <div class="row">
                     <div class="col-sm-4">
-                        <h4>Address</h4>
-                        <p>123 Sility, South Corner Street,<br />Melbornem Australia.</p>
+                        <h4>Adresse</h4>
+                        <p>{{adresse}}</p>
                     </div>
                     <!-- end .col-sm-4 -->
                     <div class="col-sm-4">
@@ -1028,7 +1060,7 @@
                     <!-- end .col-sm-4 -->
                     <div class="col-sm-4">
                         <h4>Contact</h4>
-                        <p>Tel: +61 123-456-7890<br />Mail: Sility@example.com</p>
+                        <p>Tel: {{phone}}<br />Mail: {{email}}</p>
                     </div>
                     <!-- end .col-sm-4 -->
                 </div>
@@ -1037,7 +1069,7 @@
             <!-- end .container -->
         </div>
         <!-- end .footer -->
-        <div class="bottom">Copyright &copy; Sility. All Rights Reserved.</div>
+        <div class="bottom">Copyright &copy; Kevin Obam ekono. All Rights Reserved.</div>
         <!-- end .bottom -->
     </footer>
     <!-- end .footer -->
@@ -1068,13 +1100,13 @@
         var app = angular.module('myApp', []);
         app.controller('home', function($scope) {
             $scope.nom = "Kevin Obam Ekono";
-            $scope.fonction1 = "DESIGN+ DEVELOPE+ INTERACTIVE+ ART+";
-            $scope.fonction2 = "DESIGN+ DEVELOPE+ INTERACTIVE+ ART+";
-            $scope.fonction3 = "DESIGN+ DEVELOPE+ INTERACTIVE+ ART+";
-            $scope.descriptif = "Bonjour, je suis Kevin Obam. J'ai 2 ans d'expérience dans le developpement Web et UX. Je travaille sur une variété de marques et d'agences, grandes et petites.";
+            $scope.fonction1 = "FULL+ STACK+ DEVELOPPEUR+ WEB+";
+            $scope.fonction2 = "MOBILE+ STAND ALONE+";
 
-            $scope.cv = "Angale Ebolowa ,Cameroun";
-            $scope.image = "image/logo longrich.jpg";
+            $scope.descriptif = "Bonjour, je suis Kevin Obam Ekono. J'ai 4 ans d'expériences dans le developpement . Je travaille sur une variété de technologies, front-end et back-end, je suis tres sociable et j'adore les nouveaux defis car pour moi un projet c'est un defis ainsi qu'une opportunité d'apprendre des nouvelles choses.j'ai une mobilité national ou international.j'aime le travail bien fait et j'aime beaucoup travailler en equipe. Pour moi <<la programmation c'est l'école de la rue >>";
+
+            $scope.cv = "images/cv.pdf";
+            $scope.image = "images/jamaldemi2.png";
 
         });
 
@@ -1090,6 +1122,20 @@
             $scope.github = "github";
 
         });
+        app.controller('cafe', function($scope) {
+            $scope.nom = "Kevin Obam Ekono";
+            $scope.fonction = "Developpeur full stack";
+            $scope.image = "images/auteur2.jpg";
+            $scope.slogan = "Allons boire du café";
+            $scope.cv = "images/cv.pdf";
+
+
+
+
+
+
+
+        });
         app.controller('Voila', function($scope) {
             $scope.nom = "Kevin Obam";
             $scope.section1 = "ACCUEIL";
@@ -1100,22 +1146,29 @@
             $scope.section5 = "EDUCATION";
             $scope.section6 = "REALISATION";
             $scope.section7 = "BLOG";
-            $scope.section8 = "CONTACT";
+            $scope.section8 = "Github";
+
 
 
 
         });
         app.controller('About', function($scope) {
             $scope.titre_section = "A PROPOS";
+
             $scope.nom = "Kevin Obam Ekono";
-            $scope.image = "#";
-            $scope.fonction = "DESIGN+ DEVELOPE+ INTERACTIVE+ ART+";
-            $scope.descriptif = "Bonjour, je suis Kevin Obam. J'ai 2 ans d'expérience dans le developpement Web et UX. Je travaille sur une variété de marques et d'agences, grandes et petites.";
+            $scope.fonction = "FULL+ STACK+ DEVELOPPEUR+ WEB+ MOBILE+ STAND ALONE+";
+
+
+            $scope.descriptif = "Bonjour, je suis Kevin Obam Ekono. J'ai 4 ans d'expériences dans le developpement. Je travaille sur une variété de technologies, front-end et back-end, je suis tres sociable et j'adore les nouveaux defis car pour moi un projet c'est un defis ainsi qu'une opportunité d'apprendre des nouvelles choses.j'ai une mobilité national ou international.j'aime le travail bien fait et j'aime beaucoup travailler en equipe. Pour moi <<la programmation c'est l'école de la rue >>";
+
+
+
+            $scope.image = "images/jamalentier2.png";
 
             $scope.date_naissance = "08/03/1995";
-            $scope.phone = "691 10 01 28 /693 44 18 40";
-            $scope.email = "ekonokevin@gmail.com";
-            $scope.adresse = " Yde rue 4025";
+            $scope.phone = " (+237) 691 10 01 28 /693 44 18 40";
+            $scope.email = "ekonokevin@gmail.com ";
+            $scope.adresse = "Cameroun, Yaoundé Bonamoussadi rue 4025";
             $scope.websitef = "kevinobam.objis.com";
 
 
@@ -1146,71 +1199,299 @@
 
 
         app.controller('mes_compentences', function($scope) {
-            $scope.nom1 = "compentence1";
-            $scope.indice1 = "98";
+            $scope.nom1 = "html/css/js";
+            $scope.indice1 = "90";
 
-            $scope.nom2 = "compentence2";
-            $scope.indice2 = "75";
+            $scope.nom2 = "Photoshop";
+            $scope.indice2 = "60";
 
-            $scope.nom3 = "compentence3";
-            $scope.indice3 = "80";
+            $scope.nom3 = "bibliothèques css";
+            $scope.indice3 = "85";
 
-            $scope.nom4 = "compentence4";
+            $scope.nom4 = "Frameworks front-end";
             $scope.indice4 = "80";
 
 
 
         });
         app.controller('connaissances1', function($scope) {
-            $scope.connaissances1 = "connaissance1";
-            $scope.connaissances2 = "connaissance2";
-            $scope.connaissances3 = "connaissance3";
-            $scope.connaissances4 = "connaissance4";
-            $scope.connaissances5 = "connaissance5";
-            $scope.connaissances6 = "connaissance6";
-            $scope.connaissances7 = "connaissance7";
+            $scope.connaissances1 = "html";
+            $scope.connaissances2 = "css";
+            $scope.connaissances3 = "javascript";
+            $scope.connaissances4 = "boostrap";
+            $scope.connaissances5 = "material design";
+            $scope.connaissances6 = "semantic";
+            $scope.connaissances7 = "funtamental";
 
 
         });
 
         app.controller('connaissances2', function($scope) {
-            $scope.connaissances1 = "connaissance1";
-            $scope.connaissances2 = "connaissance2";
-            $scope.connaissances3 = "connaissance3";
-            $scope.connaissances4 = "connaissance4";
-            $scope.connaissances5 = "connaissance5";
-            $scope.connaissances6 = "connaissance6";
-            $scope.connaissances7 = "connaissance7";
+            $scope.connaissances1 = "jquery";
+            $scope.connaissances2 = "angular";
+            $scope.connaissances3 = "vue js";
+
+            $scope.connaissances4 = "vivify";
+            $scope.connaissances5 = "photoshop";
+            $scope.connaissances6 = "cyberlink power director";
+            $scope.connaissances7 = "swing";
 
 
         });
+
+
+
+
+
+        app.controller('mes_compentences2', function($scope) {
+            $scope.nom1 = "java";
+            $scope.indice1 = "80";
+
+            $scope.nom2 = "php";
+            $scope.indice2 = "70";
+
+            $scope.nom3 = "Android";
+            $scope.indice3 = "80";
+
+            $scope.nom4 = "frameworks back-end";
+            $scope.indice4 = "80";
+
+
+
+        });
+        app.controller('connaissances3', function($scope) {
+            $scope.connaissances1 = "java se";
+            $scope.connaissances2 = "java ee";
+            $scope.connaissances3 = "mysql";
+            $scope.connaissances4 = "php";
+            $scope.connaissances5 = "vba";
+            $scope.connaissances6 = "c";
+            $scope.connaissances7 = "c++";
+
+
+        });
+
+        app.controller('connaissances4', function($scope) {
+            $scope.connaissances1 = "laravel";
+            $scope.connaissances2 = "spip";
+            $scope.connaissances3 = "prestashop";
+            $scope.connaissances4 = "angular";
+            $scope.connaissances5 = "spring";
+            $scope.connaissances6 = "wordpress";
+            $scope.connaissances7 = "woocommerce";
+
+
+        });
+
+        app.controller('mes_compentences3', function($scope) {
+            $scope.nom1 = "mysql";
+            $scope.indice1 = "80";
+
+            $scope.nom2 = "webmarketing";
+            $scope.indice2 = "70";
+
+            $scope.nom3 = "webmastering";
+            $scope.indice3 = "95";
+
+            $scope.nom4 = "gestion serveur web avec cpanel";
+            $scope.indice4 = "85";
+
+
+
+        });
+        app.controller('connaissances5', function($scope) {
+            $scope.connaissances1 = "uml";
+            $scope.connaissances2 = "maintenance materiel(moyen)";
+            $scope.connaissances3 = "maintenant logiciel(élévé)";
+            $scope.connaissances4 = "visual studio";
+            $scope.connaissances5 = "eclipse";
+            $scope.connaissances6 = "netbeans";
+            $scope.connaissances7 = "git";
+
+
+        });
+
+        app.controller('connaissances6', function($scope) {
+            $scope.connaissances1 = "progressive web app";
+            $scope.connaissances2 = "responsive design";
+            $scope.connaissances3 = "management";
+            $scope.connaissances4 = "trello";
+            $scope.connaissances5 = "commerciale";
+            $scope.connaissances6 = "agriculture";
+            $scope.connaissances7 = "suite office";
+
+
+        });
+
+
+
+
+
+
+
+
 
 
 
         app.controller('language', function($scope) {
-            $scope.nom1 = "compentence1";
+            $scope.nom1 = "Anglais";
             $scope.indice1 = "75";
-            $scope.niveau1 = "ADVANCE";
-            $scope.nom2 = "compentence2";
-            $scope.indice2 = "98";
-            $scope.niveau2 = "ADVANCE";
-            $scope.nom3 = "compentence3";
-            $scope.indice3 = "50";
-            $scope.niveau3 = "MOYEN";
+            $scope.niveau1 = "Moyen";
+            $scope.nom2 = "Françcais";
+            $scope.indice2 = "80";
+            $scope.niveau2 = "ELEVE";
+            $scope.nom3 = "ALLEMAND";
+            $scope.indice3 = "20";
+            $scope.niveau3 = "FAIBLE";
         });
 
+        app.controller('experience', function($scope) {
+
+
+            $scope.nombre = "4";
+
+
+        });
+        app.controller('emploi', function($scope) {
+
+            $scope.duree1 = "2018-maintenant";
+            $scope.entreprise1 = "Socinel SA";
+            $scope.fonction1 = "Consultant developpeur web";
+            $scope.descriptif1 = "developpeur laravel,gestion du serveur web";
+            $scope.icon1 = "ion-easel";
+
+            $scope.duree2 = "2017- maintenant";
+            $scope.entreprise2 = "Alteqdev sarl";
+            $scope.fonction2 = "Consultant Developpeur Web ";
+            $scope.descriptif2 = "Web Developpement,creation des sites web,administration du serveur web";
+            $scope.icon2 = "ion-easel";
+
+            $scope.duree3 = "2015-2017";
+
+            $scope.entreprise3 = "TELES-HOSTING";
+            $scope.fonction3 = "informaticien";
+            $scope.descriptif3 = "Développement des sites web( spip et wordpress & php), Maintenance informatique Administration de sites, Administration du serveur web avec cpanel";
+            $scope.icon3 = "ion-card";
+
+
+
+        });
+
+        app.controller('temoignage', function($scope) {
+
+            $scope.image1 = "images/auteur2.jpg";
+            $scope.titre1 = "la programmation c'est l'école de la rue";
+            $scope.fonction1 = "Kevin Jamal";
+
+            $scope.image2 = "images/auteur.jpg";
+            $scope.titre2 = "Partager c'est continuer d'apprendre ";
+            $scope.fonction2 = "Kevin Jamal";
+
+            $scope.image3 = "images/jamaldemi.png";
+            $scope.titre3 = "les projets sont les meilleurs diplomes d'un developpeur";
+            $scope.fonction3 = "Kevin Jamal";
+
+        });
+
+        app.controller('education', function($scope) {
+
+            $scope.titre1 = "VALEUR PÉDAGOGIQUE";
+            $scope.titre2 = "LOISIRS & INTERET";
+
+        });
+
+        app.controller('diplome', function($scope) {
+            $scope.etablissement1 = "’Université de Douala";
+            $scope.diplome1 = "BAC +2";
+            $scope.annee1 = "2013 - 2015";
+
+            $scope.etablissement2 = "Google";
+            $scope.diplome2 = "Certication progressive web app";
+            $scope.annee2 = "2018";
+
+            $scope.etablissement3 = "google africa scholarship";
+            $scope.diplome3 = "mobile web specialiste";
+            $scope.annee3 = "2018";
+
+
+            $scope.etablissement4 = "Objis";
+            $scope.diplome4 = "developpeur java et android";
+            $scope.annee4 = "2018 - 2019";
+
+        });
+        app.controller('hobbies', function($scope) {
+
+            $scope.image1 = "ion-easel";
+            $scope.nom1 = "RECHERCHE WEB";
+
+            $scope.image2 = "ion-ios-camera-outline";
+            $scope.nom2 = "INFOGRAPHIE";
+
+            $scope.image3 = "ion-plane";
+            $scope.nom3 = "VOYAGE";
+
+            $scope.image4 = "ion-ios-bookmarks-outline";
+            $scope.nom4 = "LECTURE DE LIVRE";
+
+            $scope.image5 = "ion-ios-musical-notes";
+            $scope.nom5 = "MUSIQUE";
+
+
+
+        });
+
+        app.controller('realisation', function($scope) {
+            $scope.nom = "PORTFOLIO";
+            $scope.tag1 = "site";
+            $scope.tag2 = "application";
+            $scope.tag3 = "infographie";
+            $scope.tag4 = "mobile_native";
 
 
 
 
+        });
 
+        app.controller('projet', function($scope) {
+
+            $scope.tag1 = "site infographie";
+            $scope.image1 = "images/projet1.png";
+            $scope.lien1 = "";
+            $scope.titre1 = "Site personnel";
+
+            $scope.tag2 = "site ";
+            $scope.image2 = "images/projet2.png";
+            $scope.lien2 = "#";
+            $scope.titre2 = "longrich business";
+
+            $scope.tag3 = "application ";
+            $scope.image3 = "images/projet3.png";
+            $scope.lien3 = "#";
+            $scope.titre3 = "Logiciel ProxyBank";
+
+
+
+
+        });
         app.controller('blog', function($scope) {
             $scope.blog_titre = "Titre service 4";
             $scope.blog_descr = "le text descriptif de l'";
             $scope.blog_text = "text service 4 text service 4 text service 4 text service 4 text service 4 text service 4 text service 1 text service 1";
-            $scope.blog_image = "image/logo longrich.jpg";
+            $scope.blog_image = "images/speacker.png";
             $scope.blog_auteur = "nom auteur";
             $scope.blog_date = "25/12/2015";
+
+
+
+        });
+
+        app.controller('post', function($scope) {
+            $scope.titre = "Dev FEST GDG EBOLOWA 2018";
+            $scope.image = "images/speacker1.jpg";
+            $scope.date = "8 Mars 2019";
+            $scope.lien = "#";
+            $scope.lus = "3 Lectures";
+
 
 
 
@@ -1226,6 +1507,5 @@
 </body>
 
 
-<!-- Mirrored from premiumlayers.net/demo/html/sility/ by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 20 Feb 2019 12:40:10 GMT -->
 
 </html>
