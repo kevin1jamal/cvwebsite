@@ -6,7 +6,7 @@ app.controller('home', function($scope) {
 
     $scope.descriptif = "Bonjour, je suis Kevin Obam Ekono. J'ai 4 ans d'expériences dans le developpement . Je travaille sur une variété de technologies, front-end et back-end, je suis tres sociable et j'adore les nouveaux defis car pour moi un projet c'est un defi ainsi qu'une opportunité d'apprendre des nouvelles choses.j'ai une mobilité national ou international.j'aime le travail bien fait et j'aime beaucoup travailler en equipe.<<la programmation c'est l'école de la rue >>";
 
-    $scope.cv = "images/cv.pdf";
+    $scope.cv = "#";
     $scope.image = "images/jamaldemi2.png";
 
 });
@@ -28,7 +28,7 @@ app.controller('cafe', function($scope) {
     $scope.fonction = "Developpeur full stack";
     $scope.image = "images/auteur2.jpg";
     $scope.slogan = "Allons boire du café";
-    $scope.cv = "images/cv.pdf";
+    $scope.cv = "#";
 
 
 
@@ -84,16 +84,16 @@ app.controller('savoir_faire_1', function($scope) {
 });
 
 app.controller('savoir_faire_2', function($scope) {
-    $scope.nom = "ion-iphone";
+    $scope.nom = "App Development";
 
-    $scope.icone = "App Development";
+    $scope.icone = "ion-iphone";
 
 
 });
 app.controller('savoir_faire_3', function($scope) {
-    $scope.nom = "ion-trophy";
+    $scope.nom = " Marketing";
 
-    $scope.icone = "Marketing";
+    $scope.icone = "ion-trophy";
 
 
 });
@@ -286,36 +286,23 @@ app.controller('emploi', function($scope) {
         },
     ];
 
-    $scope.daniel = [{
-            'image': "images/auteur2.jpg",
-            'titre': "la programmation c'est l'école de la rue",
-            'fonction': "Kevin Jamal",
-
-        },
-
-        {
-            'image': "images/auteur.jpg",
-            'titre': "Partager c'est continuer d'apprendre ",
-            'fonction': "Kevin Jamal",
-
-        },
-        {
-            'image': "images/jamaldemi.png",
-            'titre': "les projets sont les meilleurs diplomes d'un developpeur",
-            'fonction': "Kevin Jamal",
-
-        }
-
-
-    ];
-
 
 
 });
 
 app.controller('temoignages', function($scope) {
 
+    $scope.image1 = "images/jamaldemi.png";
+    $scope.titre1 = "les projets sont les meilleurs diplomes d'un developpeur";
+    $scope.fonction1 = " Kevin Jamal";
 
+    $scope.image2 = "images/auteur.jpg";
+    $scope.titre2 = "Partager c'est continuer d'apprendre";
+    $scope.fonction2 = " Kevin Jamal";
+
+    $scope.image3 = "images/auteur2.jpg";
+    $scope.titre3 = "la programmation c'est l'école de la rue";
+    $scope.fonction3 = " Kevin Jamal";
 
 });
 
@@ -329,8 +316,8 @@ app.controller('education', function($scope) {
 app.controller('diplome', function($scope) {
     $scope.educations = [{
 
-            'etablissement': "Université de Douala",
-            'diplome': "BAC +2",
+            'etablissement': "Université de Douala ",
+            'diplome': "BAC +2 Informatique ",
             'annee': "2013 - 2015",
 
         },
@@ -351,7 +338,7 @@ app.controller('diplome', function($scope) {
         {
 
             'etablissement': "Objis",
-            'diplome': "developpeur java et android",
+            'diplome': "Certification developpeur java et android",
             'annee': "2018 - 2019",
 
         },
